@@ -25,7 +25,6 @@ jobs:
       - name: install python packages
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
       - name: Setup ipatool-py
         run: |
           git clone https://github.com/dimitrovdv/ipatool_dev.git
