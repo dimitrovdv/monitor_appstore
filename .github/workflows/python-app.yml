@@ -45,5 +45,5 @@ jobs:
         with:
           to: '729044367'
           token: '7810530282:AAGcj4EM6vwfhUi8G7k4sS9U8BR31zLMOTI'
-          message: $ {{steps.execute_py_script.outputs.result}}
+          message: ${{steps.execute_py_script.outputs.result}}
         
