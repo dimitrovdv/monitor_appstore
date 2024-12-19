@@ -33,7 +33,11 @@ jobs:
           
       - name: execute py script # run main.py
         id: execute_py_script
-        run: python3 ipatool_dev/main.py lookup --appId 6479983451 -c ru
+        run: |
+          python3 ipatool_dev/main.py lookup --appId 6479983451 -c ru
+          echo "::set-output name=result::$(python3 ipatool_dev/main.py lookup --appId 6479983451 -c ru)"
+
+        
         shell: bash
 
       - name: python status telegram
