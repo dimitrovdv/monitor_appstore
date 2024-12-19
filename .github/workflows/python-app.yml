@@ -34,10 +34,7 @@ jobs:
       - name: execute py script # run main.py
         id: execute_py_script
         run: |
-          python3 ipatool_dev/main.py lookup --appId 6479983451 -c ru
-          echo "::set-output name=result::$(python3 ipatool_dev/main.py lookup --appId 6479983451 -c ru)"
-
-        
+          python3 ipatool_dev/main.py lookup --appId 6479983451 -c ru > status.txt
         shell: bash
 
       - name: python status telegram
@@ -45,5 +42,5 @@ jobs:
         with:
           to: '729044367'
           token: '7810530282:AAGcj4EM6vwfhUi8G7k4sS9U8BR31zLMOTI'
-          message: ${{steps.execute_py_script.outputs.result}}
+          message: ${{cat status.txt}}
         
